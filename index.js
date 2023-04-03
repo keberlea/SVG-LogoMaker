@@ -1,9 +1,7 @@
 const shapes = require('./lib/shapes');
-
-
 const inquirer = require('inquirer');
 
-
+// define array of 'questions' using inquirer to determine text, text color, shape color, and shape type.
 const questions = [
     {
         type: 'input',
@@ -32,3 +30,71 @@ const questions = [
         choices: ['circle', 'square', 'triangle'],
     },
 ];
+
+// function to write data to file
+// create a function to write to the shapes.svg file
+function writeSvgFile(fileName, data) {
+    fs.writeFile('shapes.svg', shapes, function(err){
+        if (err) throw err;
+        console.log('Svg File Saved!');
+        
+    });
+
+
+}
+
+
+// function to initialize program
+function init() {
+    // prompt user for answers
+    let answers = inquirer.prompt(questions);
+    // user text
+    let text = '';
+
+        // 1-3characters valid
+        if (text.length > 3 || text.length < 1) {
+            text =  answers.text;
+        } else {
+        // 0 or 4+ invalid
+        console.log('Please enter 1-3 characters');
+        return;
+        }
+        // log users text
+        console.log('Text: '+ text);
+
+    // user text color
+    let textColor = answers.textColor;
+    // log users text color 
+    console.log('Text Color: '+ textColor);
+    // shape color
+    let shapeColor = answers.shapeColor;
+    // log users shape color
+    console.log('Shape Color: '+ shapeColor);
+    // shape type
+    let shapeType = answers.shapeType
+    // log users shape type
+    console.log('Shape Type: '+ shapeType);
+
+    let userShapeType;
+    if (shapeType === 'circle') {
+        userShapeType = new circle();
+        console.log('Circle shape type selected.')
+    } 
+    else if (
+        shapeType === 'square') {
+        userShapeType = new square();
+        console.log('Square shape type selected.')
+    }
+    else if (
+        shapeType === 'triangle') {
+        userShapeType = new triangle();
+        console.log('Triangle shape type selected.')
+    };
+    //sets selected shape to selected color
+    userShapeType.setColor(shapeColor);
+
+
+}
+//function call to initialize program
+
+init();

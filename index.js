@@ -1,5 +1,7 @@
-const shapes = require('./lib/shapes');
+const {circle, square, triangle} = require('./lib/shapes');
 const inquirer = require('inquirer');
+const fs = require('fs');
+
 
 // define array of 'questions' using inquirer to determine text, text color, shape color, and shape type.
 const questions = [

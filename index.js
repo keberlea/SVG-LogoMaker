@@ -93,8 +93,20 @@ function init() {
     //sets selected shape to selected color
     userShapeType.setColor(shapeColor);
 
+    //create a new SVG and add shape and text to it
+    let svg = new SVG();
+    svg.addShape(userShapeType);  
+    svg.addText(text, textColor);
+    svgString = svg.render();
+
+    //print shape to log
+    console.log('Displaying shape: \n\n ' + svgString);
+
+    console.log('Shape generation complete!');
+    console.log('writing shape to file...')
+    writeSvgFile('shapes.svg', svgString);
 
 }
-//function call to initialize program
 
+//function call to initialize program
 init();

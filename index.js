@@ -29,12 +29,12 @@ const questions = [
     {
         type: 'input',
         name: 'textColor',
-        message: 'What color do you want your text to be?',
+        message: 'What color do you want your text to be? (color keyword or hex code)',
     },
     {
         type: 'input',
         name: 'shapeColor',
-        message: 'What color do you want your shape to be?',
+        message: 'What color do you want your shape to be? (color keyword or hex code)',
     },
     {
         type: 'list',
@@ -119,7 +119,9 @@ async function init() {
     console.log('writing shape to file...')
 
     //call function to write shapes.svg with user inputs from svgstring
-    writeSvgFile('shapes.svg', svgString);
+    writeSvgFile('logo.svg', svgString);
+
+    console.log('Generated Logo.svg')
 
 }
 

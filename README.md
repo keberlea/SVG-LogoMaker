@@ -39,6 +39,8 @@ See example folders for previously made logo's with this application.
 
 Video walkthrough of jest test and inquirer prompts to file creation:
 
+![Alt text](Images/svgLogoMakerWalkThrough.gif)
+
 https://drive.google.com/file/d/1buUTFS8nt--ZsH46D_J9CF0urmvMGoIa/view
 
 ## License 

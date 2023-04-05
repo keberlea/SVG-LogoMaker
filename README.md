@@ -25,7 +25,15 @@ This is a svg logo maker utilizing Node JS inquirer and fs to create new svg log
 note: each time one runs through the prompts the shapes.svg file is written over.
 
 ## Usage
-see sterps required for process flow and below images for examples in use.
+See steps required for process flow and below images for examples in use.
+
+Terminal showing user inputs and Console logs with associated logo created in upper right corner:
+
+![Alt text](Images/terminalandSVG.png) 
+
+Terminal showing test utilizing jest, all test passing:
+
+![Alt text](Images/npmTestTerminal.png)
 
 ## License 
   

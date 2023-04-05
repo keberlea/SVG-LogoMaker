@@ -16,11 +16,11 @@ This is a svg logo maker utilizing Node JS inquirer and fs to create new svg log
 - [Questions](#Questions)
 
 ## Installation
-1. clone repository 
-2. open terminal and enter "node index". 
-3. answer question prompts. 
-4. once complete and SVG file is written to shapes.svg file. 
-5. copy and past file or rename shapes.svg to desired name. 
+1. Clone repository 
+2. Open terminal and enter "node index". 
+3. Answer question prompts. 
+4. Once complete and SVG file is written to shapes.svg file. 
+5. Copy and paste file or rename shapes.svg to desired name. 
 
 note: each time one runs through the prompts the shapes.svg file is written over.
 
@@ -34,6 +34,12 @@ Terminal showing user inputs and Console logs with associated logo created in up
 Terminal showing test utilizing jest, all test passing:
 
 ![Alt text](Images/npmTestTerminal.png)
+
+See example folders for previously made logo's with this application.
+
+Video walkthrough of jest test and inquirer prompts to file creation:
+
+https://drive.google.com/file/d/1buUTFS8nt--ZsH46D_J9CF0urmvMGoIa/view
 
 ## License 
   

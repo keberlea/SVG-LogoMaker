@@ -8,7 +8,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/keberlea/SVG-LogoMaker/issues"
   },
-  "homepage": "https://github.com/keberlea/SVG-LogoMaker#readme"
+  "homepage": "https://github.com/keberlea/SVG-LogoMaker#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "inquirer": "^8.0.0",
+    "jest": "^29.5.0"
+  }
 }

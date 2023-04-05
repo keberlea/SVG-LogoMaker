@@ -2,6 +2,22 @@ const {circle, square, triangle} = require('./lib/shapes');
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+class SVG {
+    constructor(){
+        this.textElement = ''
+        this.shapeElement = ''
+    }
+    render(){
+        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`
+    }
+    setTextElement(text,color){
+        this.textElement =  `<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>`
+    }
+    setShapeElement(shape,color){
+        this.shapeElement = shape.render();
+    }
+}
+
 
 // define array of 'questions' using inquirer to determine text, text color, shape color, and shape type.
 const questions = [
@@ -14,11 +30,6 @@ const questions = [
         type: 'input',
         name: 'textColor',
         message: 'What color do you want your text to be? (hex code)',
-    },
-    {
-        type: 'input',
-        name: 'shape',
-        message: 'What shape do you want your text to be in?',
     },
     {
         type: 'input',
@@ -36,7 +47,7 @@ const questions = [
 // function to write data to file
 // create a function to write to the shapes.svg file
 function writeSvgFile(fileName, data) {
-    fs.writeFile('shapes.svg', shapes, function(err){
+    fs.writeFile(fileName, data, function(err){
         if (err) throw err;
         console.log('Svg File Saved!');
         
@@ -47,9 +58,11 @@ function writeSvgFile(fileName, data) {
 
 
 // function to initialize program
-function init() {
-    // prompt user for answers
-    let answers = inquirer.prompt(questions);
+async function init() {
+    console.log('Init started')
+    // prompt user questions and wait for answers
+    let answers = await inquirer.prompt(questions);
+
     // user text
     let text = '';
 
@@ -97,8 +110,8 @@ function init() {
 
     //create a new SVG and add shape and text to it
     let svg = new SVG();
-    svg.addShape(userShapeType);  
-    svg.addText(text, textColor);
+    svg.setTextElement(text, textColor);  
+    svg.setShapeElement(userShapeType);
     svgString = svg.render();
 
     //print shape to log

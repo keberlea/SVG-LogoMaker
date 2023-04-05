@@ -41,7 +41,7 @@ Video walkthrough of jest test and inquirer prompts to file creation:
 
 ![Alt text](Images/svgLogoMakerWalkThrough.gif)
 
-https://drive.google.com/file/d/1buUTFS8nt--ZsH46D_J9CF0urmvMGoIa/view
+https://drive.google.com/file/d/16ffT-s-z09nGiUdUOX7YY0qVSmTPXnfh/view
 
 ## License 
   

@@ -29,12 +29,12 @@ const questions = [
     {
         type: 'input',
         name: 'textColor',
-        message: 'What color do you want your text to be? (hex code)',
+        message: 'What color do you want your text to be?',
     },
     {
         type: 'input',
         name: 'shapeColor',
-        message: 'What color do you want your shape to be? (hex code)',
+        message: 'What color do you want your shape to be?',
     },
     {
         type: 'list',
@@ -114,11 +114,11 @@ async function init() {
     svg.setShapeElement(userShapeType);
     svgString = svg.render();
 
-    //print shape to log
-    console.log('Displaying shape: \n\n ' + svgString);
-
+   
     console.log('Shape generation complete!');
     console.log('writing shape to file...')
+
+    //call function to write shapes.svg with user inputs from svgstring
     writeSvgFile('shapes.svg', svgString);
 
 }
